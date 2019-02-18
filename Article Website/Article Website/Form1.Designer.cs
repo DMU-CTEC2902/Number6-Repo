@@ -31,6 +31,7 @@
             this.Music = new System.Windows.Forms.Label();
             this.Exercise = new System.Windows.Forms.Label();
             this.Sports = new System.Windows.Forms.Label();
+            this.Gaming = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Music
@@ -63,11 +64,22 @@
             this.Sports.TabIndex = 2;
             this.Sports.Text = "Sports";
             // 
+            // Gaming
+            // 
+            this.Gaming.AutoSize = true;
+            this.Gaming.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gaming.Location = new System.Drawing.Point(495, 38);
+            this.Gaming.Name = "Gaming";
+            this.Gaming.Size = new System.Drawing.Size(103, 29);
+            this.Gaming.TabIndex = 3;
+            this.Gaming.Text = "Gaming";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Gaming);
             this.Controls.Add(this.Sports);
             this.Controls.Add(this.Exercise);
             this.Controls.Add(this.Music);
@@ -83,6 +95,7 @@
         private System.Windows.Forms.Label Music;
         private System.Windows.Forms.Label Exercise;
         private System.Windows.Forms.Label Sports;
+        private System.Windows.Forms.Label Gaming;
     }
 }
 
