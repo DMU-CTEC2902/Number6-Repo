@@ -17,7 +17,14 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+        //code for cancel button
         private void Cancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //code for ok button
+        private void btnOK_Click(object sender, EventArgs e)
         {
 
         }
