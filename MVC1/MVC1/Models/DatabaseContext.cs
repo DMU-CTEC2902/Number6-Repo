@@ -22,5 +22,9 @@ namespace MVC1.Models
         public System.Data.Entity.DbSet<MVC1.Models.User> Users { get; set; }
 
         public System.Data.Entity.DbSet<MVC1.Models.Person> People { get; set; }
+
+        public System.Data.Entity.DbSet<MVC1.Models.Movie> Movies { get; set; }
+
+        public System.Data.Entity.DbSet<MVC1.Models.Review> Reviews { get; set; }
     }
 }

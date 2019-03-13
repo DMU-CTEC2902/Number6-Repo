@@ -1,0 +1,82 @@
+﻿@model MVC1.Models.Review
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Review</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Movie.Title)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Movie.Title)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.User.Username)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.User.Username)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ReviewTitle)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ReviewTitle)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ReviewComment)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ReviewComment)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Created)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Created)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Votes)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Votes)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Rating)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Rating)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ReviewId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
