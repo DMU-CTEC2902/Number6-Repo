@@ -11,7 +11,7 @@ namespace MVC1.Models
         public virtual int DirectorId { get; set; }
 
         public virtual string Title { get; set; }
-        public virtual string Decription { get; set; }
+        public virtual string Description { get; set; }
         public virtual string Language { get; set; }
         public virtual int Duration { get; set; }
         public virtual String Genre { get; set; } //Action, Thriller, Comedy
@@ -21,7 +21,6 @@ namespace MVC1.Models
 
         public virtual DateTime ReleaseDate { get; set; }
 
-        public virtual int Votes { get; set; }
         public virtual double Rating { get; set; }
 
         public virtual Person Director { get; set; }

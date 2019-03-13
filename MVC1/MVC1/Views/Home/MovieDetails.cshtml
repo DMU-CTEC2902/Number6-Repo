@@ -32,11 +32,11 @@
                     </dd>
 
                     <dt>
-                        @Html.DisplayNameFor(model => model.Decription)
+                        @Html.DisplayNameFor(model => model.Description)
                     </dt>
 
                     <dd>
-                        @Html.DisplayFor(model => model.Decription)
+                        @Html.DisplayFor(model => model.Description)
                     </dd>
 
                     <dt>
@@ -88,14 +88,6 @@
                     </dd>
 
                     <dt>
-                        @Html.DisplayNameFor(model => model.Votes)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Votes)
-                    </dd>
-
-                    <dt>
                         @Html.DisplayNameFor(model => model.Rating)
                     </dt>
 
@@ -132,16 +124,9 @@
 
                 @review.Created.ToString("dd MMM yyy")
                 by <a href="~/Home/UserDetails/@review.UserId"> @review.User.Person.Fullname</a>
-                @review.Rating* @review.Votes votes
+                @review.Rating* 
 
-                <select id="Rating" name="Rating">
-                    <option value="10">Excellent</option>
-                    <option value="5">Good</option>
-                    <option value="3">Average</option>
-                    <option value="1">Poor</option>
-                </select>
 
-                <input type="submit" value="Vote" class="btn btn-default" />
             </div>
         </form>
     }

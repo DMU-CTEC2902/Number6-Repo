@@ -13,5 +13,8 @@ namespace MVC1.Models
         public virtual string Password { get; set; }
 
         public virtual Person Person { get; set; }
+        
+        //shows all the reviews the user has created on each film 
+        public virtual List<Review> Reviews { get; set; }
     }
 }
