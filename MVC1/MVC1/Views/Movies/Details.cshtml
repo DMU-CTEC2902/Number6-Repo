@@ -1,0 +1,122 @@
+﻿@model MVC1.Models.Movie
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Movie</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.DirectorId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DirectorId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Decription)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Decription)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Language)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Language)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Duration)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Duration)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Genre)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Genre)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.OfficialWebsite)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.OfficialWebsite)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.LogoLink)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LogoLink)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TrailerLink)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TrailerLink)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ReleaseDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ReleaseDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Votes)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Votes)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Rating)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Rating)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MovieId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
