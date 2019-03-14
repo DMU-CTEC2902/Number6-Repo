@@ -17,5 +17,6 @@ namespace MVC1.Models
 
         public virtual Person Person { get; set; }
         public virtual Movie Movie { get; set; }
+
     }
 }

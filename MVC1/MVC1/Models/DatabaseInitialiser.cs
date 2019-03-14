@@ -76,7 +76,7 @@ namespace MVC1.Models
             Person p7 = new Person
             {
                 PersonId = 7,
-                Forename = "Jon",
+                Forename = "Jamen",
                 Surname = "Watts",
                 Role = 2 //Director
             };
@@ -98,9 +98,40 @@ namespace MVC1.Models
                 Forename = "Smith",
                 Surname = "Fort",
 
-                Role = 3 //Actor
+                Role = 1 //User
             };
             context.People.Add(p9);
+
+            Person p10 = new Person
+            {
+                PersonId = 10,
+                Forename = "Jonny",
+                Surname = "Fort",
+
+                Role = 1 //User
+            };
+            context.People.Add(p10);
+
+            Person p11 = new Person
+            {
+                PersonId = 10,
+                Forename = "Laure de",
+                Surname = " Clermont-Tonnerre",
+
+                Role = 2 //director
+            };
+            context.People.Add(p11);
+
+            Person p12 = new Person
+            {
+                PersonId = 10,
+                Forename = "Lauren ",
+                Surname = " Clermonte",
+
+                Role = 1 //user
+            };
+            context.People.Add(p12);
+
 
             //Movies
             Movie m1 = new Movie
@@ -109,6 +140,7 @@ namespace MVC1.Models
                 Title = "Ben Is Back",
                 Description = "A drug addicted teenage boy shows up unexpectedly at his family's home on Christmas Eve.",
                 ReleaseDate = new DateTime(2019, 03, 15),
+                
 
                 DirectorId = 5,
                 Director = p5,
@@ -129,6 +161,7 @@ namespace MVC1.Models
                 Title = "The Godfather",
                 Description = "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
                 ReleaseDate = new DateTime(1972, 08, 24),
+                
 
                 DirectorId = 6,
                 Director = p6,
@@ -149,6 +182,7 @@ namespace MVC1.Models
                 Title = "Spider-Man: Far From Home",
                 Description = "Peter Parker and his friends go on summer vacation to Europe, where Peter finds himself trying to fight off a new fow, Mysterio, who as his name indicates may not be all that he appears.",
                 ReleaseDate = new DateTime(2019, 07, 05),
+                
 
                 DirectorId = 7,
                 Director = p7,
@@ -165,10 +199,11 @@ namespace MVC1.Models
 
             Movie m4 = new Movie
             {
-                MovieId = 3,
+                MovieId = 4,
                 Title = "The Lion King",
                 Description = "CGI re-imagining of the 1994 Disney classic.",
                 ReleaseDate = new DateTime(2019, 07, 19),
+                
 
                 DirectorId = 8,
                 Director = p8,
@@ -184,10 +219,11 @@ namespace MVC1.Models
 
             Movie m5 = new Movie
             {
-                MovieId = 4,
+                MovieId = 5,
                 Title = "Taken",
                 Description = "Liam Nelson is on a mission",
                 ReleaseDate = new DateTime(2009, 01, 01),
+                
 
                 DirectorId = 8,
                 Director = p8,
@@ -201,8 +237,32 @@ namespace MVC1.Models
 
             };
             context.Movies.Add(m5);
-            
-                                    
+
+
+
+            Movie m6 = new Movie
+            {
+                MovieId = 6,
+                Title = "MUSTANG",
+                Description = "MUSTANG tells the story of Roman Coleman, a violent convict, who is given the chance to participate in a rehabilitation therapy program involving the training of wild mustangs.",
+                ReleaseDate = new DateTime(2019, 03, 01),
+
+
+                DirectorId = 8,
+                Director = p8,
+
+                OfficialWebsite = "https://www.imdb.com/title/tt5952594/?ref_=inth_ov_tt",
+                TrailerLink = "https://www.imdb.com/video/imdb/vi3905731097?playlistId=tt5952594&ref_=tt_ov_vi",
+                LogoLink = "https://m.media-amazon.com/images/M/MV5BNDkwYzBjOTItYTFhZC00ZWZlLTg1YzYtZWU4ZGZhZWI0MmNkXkEyXkFqcGdeQXVyODAzODU1NDQ@._V1_SY1000_SX675_AL_.jpg",
+
+                Language = "English",
+                Rating = 10
+
+            };
+            context.Movies.Add(m6);
+
+
+
             //Reviews
             Review r1 = new Review
             {
@@ -234,9 +294,9 @@ namespace MVC1.Models
             };
             context.Reviews.Add(r2);
 
-            Review r22 = new Review
+            Review r3 = new Review
             {
-                ReviewId = 2,
+                ReviewId = 3,
                 MovieId = 2,
                 Movie = m2,
                 PersonId = 2,
@@ -247,11 +307,11 @@ namespace MVC1.Models
                 Rating = 1
                
             };
-            context.Reviews.Add(r22);
+            context.Reviews.Add(r3);
 
-            Review r3 = new Review
+            Review r4 = new Review
             {
-                ReviewId = 3,
+                ReviewId = 4,
                 MovieId = 1,
                 Movie = m1,
                 PersonId = 3,
@@ -262,21 +322,61 @@ namespace MVC1.Models
                 Rating = 2
                 
             };
-            context.Reviews.Add(r3);
+            context.Reviews.Add(r4);
 
-            Review r4 = new Review
+            Review r5 = new Review
             {
-                ReviewId = 4,
+                ReviewId = 5,
                 MovieId = 5,
                 Movie = m5,
                 PersonId = 4,
                 Person = p4,
                 Created = new DateTime(2019, 01, 21),
-                ReviewTitle = "What a boring movie",
-                ReviewComment = "waste of time.",
+                ReviewTitle = "What an amazing movie",
+                ReviewComment = "not a waste of time.",
                 Rating = 10
             };
-            context.Reviews.Add(r3);
+            context.Reviews.Add(r5);
+
+
+            Review r6 = new Review
+            {
+                ReviewId = 6,
+                MovieId = 5,
+                Movie = m5,
+                PersonId = 4,
+                Person = p4,
+                Created = new DateTime(2019, 01, 21),
+                ReviewTitle = "Great Moive",
+                ReviewComment = "not a waste of time.",
+                Rating = 5
+            };
+            context.Reviews.Add(r6);
+
+
+
+            Review r7 = new Review
+            {
+                ReviewId = 7,
+                MovieId = 6,
+                Movie = m6,
+                PersonId = 10,
+                Person = p10,
+                Created = new DateTime(2019, 01, 21),
+                ReviewTitle = "Great Moive",
+                ReviewComment = "not a waste of time.",
+                Rating = 10
+            };
+            context.Reviews.Add(r7);
+
+
+
+
+
+
+
+
+
 
             base.Seed(context);
         }

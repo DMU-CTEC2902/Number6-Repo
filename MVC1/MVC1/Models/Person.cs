@@ -13,6 +13,7 @@ namespace MVC1.Models
         public virtual string Username { get; set; }
         public virtual string Password { get; set; }
         public virtual int Role { get; set; }
+        
 
         public string Fullname
         {
@@ -24,6 +25,9 @@ namespace MVC1.Models
     
        //shows all the reviews the user has created on each film 
         public virtual List<Review> Reviews { get; set; }
-
+        
+        // shows the movies of all the Directos has made 
+        public virtual List<Movie> Movies { get; set; }
+       
     }
 }
