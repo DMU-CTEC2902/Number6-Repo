@@ -17,7 +17,7 @@ namespace MVC1.Controllers
         // GET: Reviews
         public ActionResult Index()
         {
-            var reviews = db.Reviews.Include(r => r.Movie).Include(r => r.User);
+            var reviews = db.Reviews.Include(r => r.Movie).Include(r => r.Person);
             return View(reviews.ToList());
         }
 
@@ -40,7 +40,7 @@ namespace MVC1.Controllers
         public ActionResult Create()
         {
             ViewBag.MovieId = new SelectList(db.Movies, "MovieId", "Title");
-            ViewBag.UserId = new SelectList(db.Users, "UserId", "Username");
+            ViewBag.PersonId = new SelectList(db.People, "PersonId", "Forename");
             return View();
         }
 
@@ -49,7 +49,7 @@ namespace MVC1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ReviewId,UserId,MovieId,ReviewTitle,ReviewComment,Created,Votes,Rating")] Review review)
+        public ActionResult Create([Bind(Include = "ReviewId,PersonId,MovieId,ReviewTitle,ReviewComment,Created,Rating")] Review review)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +59,7 @@ namespace MVC1.Controllers
             }
 
             ViewBag.MovieId = new SelectList(db.Movies, "MovieId", "Title", review.MovieId);
-            ViewBag.UserId = new SelectList(db.Users, "UserId", "Username", review.UserId);
+            ViewBag.PersonId = new SelectList(db.People, "PersonId", "Forename", review.PersonId);
             return View(review);
         }
 
@@ -76,7 +76,7 @@ namespace MVC1.Controllers
                 return HttpNotFound();
             }
             ViewBag.MovieId = new SelectList(db.Movies, "MovieId", "Title", review.MovieId);
-            ViewBag.UserId = new SelectList(db.Users, "UserId", "Username", review.UserId);
+            ViewBag.PersonId = new SelectList(db.People, "PersonId", "Forename", review.PersonId);
             return View(review);
         }
 
@@ -85,7 +85,7 @@ namespace MVC1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ReviewId,UserId,MovieId,ReviewTitle,ReviewComment,Created,Votes,Rating")] Review review)
+        public ActionResult Edit([Bind(Include = "ReviewId,PersonId,MovieId,ReviewTitle,ReviewComment,Created,Rating")] Review review)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +94,7 @@ namespace MVC1.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.MovieId = new SelectList(db.Movies, "MovieId", "Title", review.MovieId);
-            ViewBag.UserId = new SelectList(db.Users, "UserId", "Username", review.UserId);
+            ViewBag.PersonId = new SelectList(db.People, "PersonId", "Forename", review.PersonId);
             return View(review);
         }
 

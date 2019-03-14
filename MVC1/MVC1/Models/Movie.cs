@@ -9,7 +9,6 @@ namespace MVC1.Models
     {
         public virtual int MovieId { get; set; }
         public virtual int DirectorId { get; set; }
-
         public virtual string Title { get; set; }
         public virtual string Description { get; set; }
         public virtual string Language { get; set; }

@@ -46,24 +46,21 @@ namespace MVC1.Controllers
             return View(movie);
         }
 
-
+        
         //GET: User/Details
-        public ActionResult UserDetails(int? id)
+        public ActionResult PersonDetails(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
-            if (user == null)
+            Person p = db.People.Find(id);
+            if (p == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(p);
         }
-
-
-
 
         public ActionResult About()
         {
