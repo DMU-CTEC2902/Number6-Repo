@@ -46,7 +46,7 @@ namespace MVC1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PersonId,Forename,Surname,Role")] Person person)
+        public ActionResult Create([Bind(Include = "PersonId,Forename,Surname,Username,Password,Role")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace MVC1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PersonId,Forename,Surname,Role")] Person person)
+        public ActionResult Edit([Bind(Include = "PersonId,Forename,Surname,Username,Password,Role")] Person person)
         {
             if (ModelState.IsValid)
             {

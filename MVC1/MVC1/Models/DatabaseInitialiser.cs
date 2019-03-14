@@ -10,12 +10,14 @@ namespace MVC1.Models
     {
         protected override void Seed(DatabaseContext context)
         {
-            //Pople that use the website
+            //Users of the site
             Person p1 = new Person
             {
                 PersonId = 1,
                 Forename = "John",
                 Surname = "Smith",
+                Username = "jsmith",
+                Password = "jsmithPass",
                 Role = 1 //User
             };
             context.People.Add(p1);
@@ -25,6 +27,8 @@ namespace MVC1.Models
                 PersonId = 2,
                 Forename = "Mark",
                 Surname = "Rally",
+                Username = "mrally",
+                Password = "mrallyPass",
                 Role = 1 //User
             };
             context.People.Add(p2);
@@ -34,78 +38,69 @@ namespace MVC1.Models
                 PersonId = 3,
                 Forename = "Dave",
                 Surname = "Smith",
+                Username = "dsmith",
+                Password = "dsmithPass",
                 Role = 1 //User
             };
             context.People.Add(p3);
 
-            //People that are Directors
-            Person d1 = new Person
+            Person p4 = new Person
             {
-                PersonId = 3,
+                PersonId = 4,
+                Forename = "Jordan",
+                Surname = "Smith",
+                Username = "jsmith",
+                Password = "jsmithPass",
+                Role = 1 //User
+            };
+            context.People.Add(p4);
+           
+            Person p5 = new Person
+            {
+                PersonId = 5,
                 Forename = "Peter",
                 Surname = "Hedges",
                 Role = 2 //Director
             };
-            context.People.Add(d1);
+            context.People.Add(p5);
 
-            Person d2 = new Person
+            Person p6 = new Person
             {
-                PersonId = 4,
+                PersonId = 6,
                 Forename = "Francis",
                 Surname = "Ford Coppola",
                 Role = 2 //Director
             };
-            context.People.Add(d2);
+            context.People.Add(p6);
 
-            Person d3 = new Person
+            Person p7 = new Person
             {
-                PersonId = 5,
+                PersonId = 7,
                 Forename = "Jon",
                 Surname = "Watts",
                 Role = 2 //Director
             };
-            context.People.Add(d3);
+            context.People.Add(p7);
 
-            Person d4 = new Person
+            Person p8 = new Person
             {
-                PersonId = 6,
+                PersonId = 8,
                 Forename = "Jon",
                 Surname = "Favreau",
+
                 Role = 2 //Director
             };
-            context.People.Add(d4);
-
-            //Website users
-            User u1 = new User
+            context.People.Add(p8);
+            
+            Person p9 = new Person
             {
-                UserId = 1,
-                PersonId = 1,
-                Username = "jsmith",
-                Password = "jsmithPass",
-                Person = p1
-            };
-            context.Users.Add(u1);
+                PersonId = 9,
+                Forename = "Smith",
+                Surname = "Fort",
 
-            User u2 = new User
-            {
-                UserId = 2,
-                PersonId = 2,
-                Username = "mrally",
-                Password = "mrallyPass",
-                Person = p2
+                Role = 3 //Actor
             };
-            context.Users.Add(u2);
-
-            User u3 = new User
-            {
-                UserId = 3,
-                PersonId = 7,
-                Username = "dsmith",
-                Password = "dsmithPass",
-                Person = p3
-            };
-            context.Users.Add(u3);
-
+            context.People.Add(p9);
 
             //Movies
             Movie m1 = new Movie
@@ -115,8 +110,8 @@ namespace MVC1.Models
                 Description = "A drug addicted teenage boy shows up unexpectedly at his family's home on Christmas Eve.",
                 ReleaseDate = new DateTime(2019, 03, 15),
 
-                DirectorId = 3,
-                Director = d1,
+                DirectorId = 5,
+                Director = p5,
 
                 OfficialWebsite = "https://blackbearpictures.com/films-in-theaters/ben-is-back/",
                 TrailerLink = "https://www.youtube.com/embed/MI9NdYktzfE",
@@ -135,8 +130,8 @@ namespace MVC1.Models
                 Description = "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
                 ReleaseDate = new DateTime(1972, 08, 24),
 
-                DirectorId = 4,
-                Director = d2,
+                DirectorId = 6,
+                Director = p6,
 
                 OfficialWebsite = "https://www.facebook.com/thegodfather",
                 TrailerLink = "https://www.imdb.com/videoplayer/vi1348706585?playlistId=tt0068646&ref_=tt_ov_vi",
@@ -155,15 +150,15 @@ namespace MVC1.Models
                 Description = "Peter Parker and his friends go on summer vacation to Europe, where Peter finds himself trying to fight off a new fow, Mysterio, who as his name indicates may not be all that he appears.",
                 ReleaseDate = new DateTime(2019, 07, 05),
 
-                DirectorId = 5,
-                Director = d3,
+                DirectorId = 7,
+                Director = p7,
 
                 OfficialWebsite = "https://www.marvel.com/movies/spider-man-far-from-home",
                 TrailerLink = "https://www.imdb.com/videoplayer/vi3860314649?playlistId=tt6320628&ref_=tt_ov_vi",
                 LogoLink = "https://m.media-amazon.com/images/M/MV5BMjE1MzE5MjczMl5BMl5BanBnXkFtZTgwOTgwMTgxNzM@._V1_UX182_CR0,0,182,268_AL_.jpg",
 
                 Language = "English",
-                //m3.Duration = 0;
+               
                 Rating = 0
             };
             context.Movies.Add(m3);
@@ -175,8 +170,8 @@ namespace MVC1.Models
                 Description = "CGI re-imagining of the 1994 Disney classic.",
                 ReleaseDate = new DateTime(2019, 07, 19),
 
-                DirectorId = 6,
-                Director = d4,
+                DirectorId = 8,
+                Director = p8,
 
                 OfficialWebsite = "https://disney.co.uk/",
                 TrailerLink = "https://www.imdb.com/videoplayer/vi2773858841?playlistId=tt6105098&ref_=tt_ov_vi",
@@ -194,8 +189,8 @@ namespace MVC1.Models
                 Description = "Liam Nelson is on a mission",
                 ReleaseDate = new DateTime(2009, 01, 01),
 
-                DirectorId = 6,
-                Director = d4,
+                DirectorId = 8,
+                Director = p8,
 
                 OfficialWebsite = "https://en.wikipedia.org/wiki/Taken_(film)",
                 TrailerLink = "https://www.youtube.com/watch?v=uPJVJBm9TPA",
@@ -207,17 +202,15 @@ namespace MVC1.Models
             };
             context.Movies.Add(m5);
             
-            
-            
-            
+                                    
             //Reviews
             Review r1 = new Review
             {
                 ReviewId = 1,
                 MovieId = 1,
                 Movie = m1,
-                UserId = 1,
-                User = u1,
+                PersonId = 1,
+                Person = p1,
                 Created = new DateTime(2019, 03, 15),
                 ReviewTitle = "Julia Roberts on top of her game",
                 ReviewComment = "Top movie",
@@ -231,8 +224,8 @@ namespace MVC1.Models
                 ReviewId = 2,
                 MovieId = 1,
                 Movie = m1,
-                UserId = 2,
-                User = u2,
+                PersonId = 2,
+                Person = p2,
                 Created = new DateTime(2019, 03, 17),
                 ReviewTitle = "What a crappy movie",
                 ReviewComment = "It litterally does not make sense, waste of time.",
@@ -246,8 +239,8 @@ namespace MVC1.Models
                 ReviewId = 2,
                 MovieId = 2,
                 Movie = m2,
-                UserId = 2,
-                User = u2,
+                PersonId = 2,
+                Person = p2,
                 Created = new DateTime(2019, 03, 17),
                 ReviewTitle = "What a crappy movie 2",
                 ReviewComment = "It litterally does not make sense, waste of time. 2",
@@ -256,19 +249,32 @@ namespace MVC1.Models
             };
             context.Reviews.Add(r22);
 
-
             Review r3 = new Review
             {
                 ReviewId = 3,
                 MovieId = 1,
                 Movie = m1,
-                UserId = 3,
-                User = u3,
+                PersonId = 3,
+                Person = p3,
                 Created = new DateTime(2019, 02, 17),
                 ReviewTitle = "What a boring movie",
                 ReviewComment = "waste of time.",
                 Rating = 2
                 
+            };
+            context.Reviews.Add(r3);
+
+            Review r4 = new Review
+            {
+                ReviewId = 4,
+                MovieId = 5,
+                Movie = m5,
+                PersonId = 4,
+                Person = p4,
+                Created = new DateTime(2019, 01, 21),
+                ReviewTitle = "What a boring movie",
+                ReviewComment = "waste of time.",
+                Rating = 10
             };
             context.Reviews.Add(r3);
 

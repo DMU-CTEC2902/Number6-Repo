@@ -7,10 +7,11 @@ namespace MVC1.Models
 {
     public class Person
     {
-        public virtual int PersonId { get; set; }
+        public virtual int PersonId { get; set; }        
         public virtual string Forename { get; set; }
         public virtual string Surname { get; set; }
-
+        public virtual string Username { get; set; }
+        public virtual string Password { get; set; }
         public virtual int Role { get; set; }
 
         public string Fullname
@@ -20,5 +21,9 @@ namespace MVC1.Models
                 return Forename + " " + Surname;
             }
         }
+    
+       //shows all the reviews the user has created on each film 
+        public virtual List<Review> Reviews { get; set; }
+
     }
 }

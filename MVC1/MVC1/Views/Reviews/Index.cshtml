@@ -21,7 +21,7 @@
                 @Html.DisplayNameFor(model => model.Movie.Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User.Username)
+                @Html.DisplayNameFor(model => model.Person.Forename)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ReviewTitle)
@@ -31,9 +31,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Created)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Votes)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Rating)
@@ -47,7 +44,7 @@
                 @Html.DisplayFor(modelItem => item.Movie.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.User.Username)
+                @Html.DisplayFor(modelItem => item.Person.Forename)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ReviewTitle)
@@ -57,9 +54,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Created)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Votes)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Rating)

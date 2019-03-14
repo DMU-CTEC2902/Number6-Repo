@@ -123,7 +123,7 @@
                 <input type="hidden" id="ReviewId" name="ReviewId" value="@review.ReviewId" />
 
                 @review.Created.ToString("dd MMM yyy")
-                by <a href="~/Home/UserDetails/@review.UserId"> @review.User.Person.Fullname</a>
+                by <a href="~/Home/PersonDetails/@review.PersonId"> @review.Person.Fullname</a>
                 @review.Rating* 
 
 
