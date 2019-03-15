@@ -20,9 +20,8 @@
                     </dt>
 
                     <dd>
-                        @Html.DisplayFor(model => model.Director.Fullname)
-                    </dd>
-
+                        <a href="~/Home/DirectorDetails/@Model.DirectorId"> @Model.Director.Fullname</a>
+                    </dd>                    
 
                     <dt>
                         @Html.DisplayNameFor(model => model.Title)

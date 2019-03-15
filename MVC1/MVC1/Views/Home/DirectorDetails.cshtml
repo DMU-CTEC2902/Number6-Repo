@@ -1,0 +1,61 @@
+﻿@model MVC1.Models.Person
+
+@{
+    ViewBag.Title = "DirectorDetails";
+}
+
+<h2>DirectorDetails</h2>
+
+<div>
+    <h4>Person</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Forename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Forename)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Role)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Role)
+        </dd>
+
+    </dl>
+</div>
+
+<div>Movies</div>
+@foreach (var movie in Model.Movies)
+{
+    <a href="~/Home/MovieDetails/@movie.MovieId">@movie.Title</a> 
+    <br/>
+    @movie.Language 
+    <div>@movie.Description</div>
+    <br/>
+    <br/>
+}
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

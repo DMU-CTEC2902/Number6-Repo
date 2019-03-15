@@ -62,6 +62,21 @@ namespace MVC1.Controllers
             return View(p);
         }
 
+        //GET: User/Details
+        public ActionResult DirectorDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Person p = db.People.Find(id);
+            if (p == null)
+            {
+                return HttpNotFound();
+            }
+            return View(p);
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
