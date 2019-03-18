@@ -27,14 +27,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Username)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Username)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Role)
         </dt>
 
@@ -56,6 +48,7 @@
     <br/>
 }
 
-<p>
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PersonId }) |
+    </p>

@@ -7,7 +7,7 @@ namespace MVC1.Models
 {
     public class Review
     {
-        public virtual int ReviewId { get; set; }
+        public virtual int ReviewId { get; set; }//Primary key
         public virtual int PersonId { get; set; }
         public virtual int MovieId { get; set; }
         public virtual string ReviewTitle { get; set; }
