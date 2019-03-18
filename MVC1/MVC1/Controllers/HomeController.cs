@@ -77,6 +77,27 @@ namespace MVC1.Controllers
             return View(p);
         }
 
+        public ActionResult CreateReview([Bind(Include = "ReviewId,PersonId,MovieId,ReviewTitle,ReviewComment,Created,Rating")] Review review)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Reviews.Add(review);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.MovieId = new SelectList(db.Movies, "MovieId", "Title", review.MovieId);
+            ViewBag.PersonId = new SelectList(db.People, "PersonId", "Forename", review.PersonId);
+            return View(review);
+        }
+
+        // GET: Reviews/Create
+        public ActionResult Create()
+        {
+            ViewBag.MovieId = new SelectList(db.Movies, "MovieId", "Title");
+            ViewBag.PersonId = new SelectList(db.People, "PersonId", "Forename");
+            return View();
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
