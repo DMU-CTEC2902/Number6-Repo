@@ -19,14 +19,16 @@ namespace MVC1.Controllers
             //ViewBag.Movies = db.Movies.ToList();
 
             //Using viewModel is more organised and from the view we can access those objects very easy like in the code page here
-            MovieViewModel movieVM = new MovieViewModel();
+            MovieViewModel movieVM = new MovieViewModel
+            {
 
-            //new movies
-            movieVM.NewMovies = db.Movies.Where(m => m.ReleaseDate.Year >= DateTime.Now.Year && m.ReleaseDate.Month <= DateTime.Now.Month).ToList();
-            //upcoming movies
-            movieVM.UpComingMovies = db.Movies.Where(m => m.ReleaseDate.Year >= DateTime.Now.Year && m.ReleaseDate.Month > DateTime.Now.Month).ToList();
-            //top rated movies
-            movieVM.TopRatedMovies = db.Movies.OrderByDescending(m => m.Rating).Take(3).ToList();
+                //new movies
+                NewMovies = db.Movies.Where(m => m.ReleaseDate.Year >= DateTime.Now.Year && m.ReleaseDate.Month <= DateTime.Now.Month).ToList(),
+                //upcoming movies
+                UpComingMovies = db.Movies.Where(m => m.ReleaseDate.Year >= DateTime.Now.Year && m.ReleaseDate.Month > DateTime.Now.Month).ToList(),
+                //top rated movies
+                TopRatedMovies = db.Movies.OrderByDescending(m => m.Rating).Take(3).ToList()
+            };
 
             return View(movieVM);
         }
