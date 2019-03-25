@@ -86,6 +86,7 @@ namespace MVC1.Controllers
             return View();
         }
 
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
