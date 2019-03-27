@@ -80,15 +80,36 @@ namespace MVC1.Controllers
         }
 
 
-        // GET: Reviews/Create
-        public ActionResult AddReview()
-        {
-            ViewBag.MovieId = new SelectList(db.Movies, "MovieId", "Title");
+        // GET: Reviews/Create -- this is called first time on load
+        public ActionResult AddReview(int? id)
+        {            
+            //ViewBag.MovieId = new SelectList(db.Movies, "MovieId", "Title");            //this not needed, as the list of moviews is removed
+            ViewBag.Movie = db.Movies.FirstOrDefault(i => i.MovieId == id); // Find the movie, and store the movie in the bag to use it in the ViewPAge.
             ViewBag.PersonId = new SelectList(db.People, "PersonId", "Forename");
             return View();
         }
 
+        // POST: Reviews/Create - this actualy does the save
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddReview(int? id,[Bind(Include = "ReviewId,PersonId,MovieId,ReviewTitle,ReviewComment,Created,Rating")] Review review)
+        {
+            if (ModelState.IsValid)
+            {
+                review.MovieId = id.Value; //the moview being reviewd
+                review.Created = DateTime.Now; //the date of the review is by default todays date.
+                db.Reviews.Add(review);
+                db.SaveChanges(); //save
 
+                return RedirectToAction("MovieDetails/"+review.MovieId); //redirect back to the moview.
+            }
+
+            ViewBag.MovieId = new SelectList(db.Movies, "MovieId", "Title", review.MovieId);
+            ViewBag.PersonId = new SelectList(db.People, "PersonId", "Forename", review.PersonId);
+            return View(review);
+        }
 
 
         public ActionResult About()
