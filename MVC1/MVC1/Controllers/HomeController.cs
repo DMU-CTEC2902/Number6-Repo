@@ -79,6 +79,18 @@ namespace MVC1.Controllers
             return View(p);
         }
 
+
+        // GET: Reviews/Create
+        public ActionResult AddReview()
+        {
+            ViewBag.MovieId = new SelectList(db.Movies, "MovieId", "Title");
+            ViewBag.PersonId = new SelectList(db.People, "PersonId", "Forename");
+            return View();
+        }
+
+
+
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
