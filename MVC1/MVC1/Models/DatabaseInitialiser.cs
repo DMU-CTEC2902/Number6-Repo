@@ -261,6 +261,96 @@ namespace MVC1.Models
             };
             context.Movies.Add(m6);
 
+            Movie m7 = new Movie
+            {
+                MovieId = 7,
+                Title = "US",
+                Description = "Messed up sci-fi .",
+                ReleaseDate = new DateTime(2019, 05, 01),
+
+
+                DirectorId = 8,
+                Director = p8,
+
+                OfficialWebsite = "https://www.imdb.com/title/tt5952594/?ref_=inth_ov_tt",
+                TrailerLink = "https://www.youtube.com/watch?v=hNCmb-4oXJA",
+                LogoLink = "https://upload.wikimedia.org/wikipedia/en/thumb/0/00/Us_%282019%29_theatrical_poster.png/220px-Us_%282019%29_theatrical_poster.png",
+
+                Language = "English",
+                Rating = 10
+
+            };
+            context.Movies.Add(m7);
+
+
+            Movie m8 = new Movie
+            {
+                MovieId = 8,
+                Title = "BAD BOYS 3",
+                Description = "Messed up sci-fi .",
+                ReleaseDate = new DateTime(2019, 05, 01),
+
+
+                DirectorId = 8,
+                Director = p8,
+
+                OfficialWebsite = "https://www.imdb.com/title/tt1502397/",
+                TrailerLink = "https://www.youtube.com/watch?v=H5xEjnHrGgU",
+                LogoLink = "https://timesofindia.indiatimes.com/thumb/msid-62722517,imgsize-53515,width-800,height-600,resizemode-4/62722517.jpg",
+
+                Language = "English",
+                Rating = 10
+
+            };
+            context.Movies.Add(m8);
+
+
+
+
+
+            Movie m9 = new Movie
+            {
+                MovieId = 9,
+                Title = "Friday",
+                Description = "Messed up sci-fi .",
+                ReleaseDate = new DateTime(2019, 05, 01),
+
+
+                DirectorId = 8,
+                Director = p8,
+
+                OfficialWebsite = "https://www.imdb.com/title/tt5952594/?ref_=inth_ov_tt",
+                TrailerLink = "https://www.youtube.com/watch?v=nH1Ulp4PBtA",
+                LogoLink = "https://resizing.flixster.com/q16GEG7E_3VTEv2hlpa-p7yIWX0=/206x305/v1.bTsxMTE2OTcxODtqOzE4MDg0OzEyMDA7ODAwOzEyMDA",
+
+                Language = "English",
+                Rating = 10
+
+            };
+            context.Movies.Add(m9);
+
+
+
+            Movie m10 = new Movie
+            {
+                MovieId = 10,
+                Title = "Avengers Endgame",
+                Description = "Messed up sci-fi .",
+                ReleaseDate = new DateTime(2019, 05, 01),
+
+
+                DirectorId = 8,
+                Director = p8,
+
+                OfficialWebsite = "https://www.imdb.com/title/tt5952594/?ref_=inth_ov_tt",
+                TrailerLink = "https://www.youtube.com/watch?v=TcMBFSGVi1c",
+                LogoLink = "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg",
+
+                Language = "English",
+                Rating = 10
+
+            };
+            context.Movies.Add(m10);
 
 
             //Reviews

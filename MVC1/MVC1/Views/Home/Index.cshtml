@@ -26,11 +26,11 @@
     }
 
     <br />
-    <div align="center" style="font-size:20px; font-weight:bold;">New</div>
+    <div align="center"   style="font-size:20px; font-weight:bold; font-  ">New</div>
     @foreach (var movie in @Model.NewMovies)
     {
         <div class="card-body">
-            <p class="alert-danger">
+            <p class="alert-success">
                 <a href="~/Home/MovieDetails/@movie.MovieId">@movie.Title</a>
                 @movie.ReleaseDate.ToString("dd MM yyyy")
             </p>
@@ -42,12 +42,12 @@
 
     <div align="center" style="font-size:20px; font-weight:bold;">Up Coming</div>
 
-    <div class="card-body">
+    <div class="align-self-center">
         <p class="alert-dismissible">
             @foreach (var movie in @Model.UpComingMovies)
             {
                 <a href="~/Home/MovieDetails/@movie.MovieId">
-                    <img src="@movie.LogoLink" alt="Logo" />
+                    <img src="@movie.LogoLink" alt="Logo" width="150" />
                 </a>
             }
         </p>
