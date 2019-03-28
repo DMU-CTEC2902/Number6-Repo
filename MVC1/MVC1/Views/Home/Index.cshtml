@@ -17,31 +17,38 @@
 
 @foreach (var movie in @Model.TopRatedMovies)
 {
-    <div align="center">
+<div class="card">
+    <div class="card-body">
+
         <a href="~/Home/MovieDetails/@movie.MovieId">@movie.Title</a> @movie.Rating*
     </div>
-}
-
-<br />
-<div align="center" style="font-size:20px; font-weight:bold;">New</div>
-@foreach (var movie in @Model.NewMovies)
-{
-    <div align="center">
-        <a href="~/Home/MovieDetails/@movie.MovieId">@movie.Title</a>
-        @movie.ReleaseDate.ToString("dd MM yyyy")
-    </div>
-}
-
-<br />
-
-
-<div align="center" style="font-size:20px; font-weight:bold;">Up Coming</div>
-
-<div align="center">
-    @foreach (var movie in @Model.UpComingMovies)
-    {
-        <a href="~/Home/MovieDetails/@movie.MovieId">
-            <img src="@movie.LogoLink" alt="Logo" />
-        </a>
-    }
 </div>
+    }
+
+    <br />
+    <div align="center" style="font-size:20px; font-weight:bold;">New</div>
+    @foreach (var movie in @Model.NewMovies)
+    {
+        <div class="card-body">
+            <p class="alert-danger">
+                <a href="~/Home/MovieDetails/@movie.MovieId">@movie.Title</a>
+                @movie.ReleaseDate.ToString("dd MM yyyy")
+            </p>
+        </div>
+    }
+
+    <br />
+
+
+    <div align="center" style="font-size:20px; font-weight:bold;">Up Coming</div>
+
+    <div class="card-body">
+        <p class="alert-dismissible">
+            @foreach (var movie in @Model.UpComingMovies)
+            {
+                <a href="~/Home/MovieDetails/@movie.MovieId">
+                    <img src="@movie.LogoLink" alt="Logo" />
+                </a>
+            }
+        </p>
+    </div>
